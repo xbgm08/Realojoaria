@@ -1,0 +1,46 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formulario-busca {
+    display: flex;
+    align-items: center;
+}
+
+.formulario-busca input {
+    margin-right: 10px;
+}
+
+.header i.fas {
+    font-size: 35px;
+    color: black;
+}
+
+.header img {
+    width: 70px;
+    height: 70px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 12px;
+}
+
+button {
+    background-color: white;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+  }

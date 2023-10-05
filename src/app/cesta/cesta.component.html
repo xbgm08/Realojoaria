@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesta de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cesta.component.css">
+</head>
+
+<body>
+    <!-- Cesta de Compras -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Cesta de Compras</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let produto of produtos; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ produto.nome }}</td>
+                            <td>
+                                <button type="button" class="btn btn-secondary"
+                                    (click)="aumentarQuantidade(produto)">+</button>
+                                {{ produto.quantidade }}
+                                <button type="button" class="btn btn-secondary"
+                                    (click)="diminuirQuantidade(produto)">-</button>
+                            </td>
+                            <td>R$ {{ produto.preco }}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger" (click)="removerItem(i)">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>Total: R$ {{ calcularTotal() }}</p>
+                
+                <button type="button" class="btn btn-primary" (click)="adicionarItem()">Adicionar Item</button>
+                <button type="button" class="btn btn-danger ml-2" (click)="limparCesta()">Limpar Cesta</button>
+                <button type="button" class="btn btn-success ml-2" (click)="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
